@@ -51,11 +51,17 @@ int main(int argc, char* argv[]){
 }
 ```
 **Interpreting the code**
+
 We observe that `main` is accepting a 20-byte-long password that is sent through the function `check_password` and checked to see if it matches with the hashcode `0x21DD09EC`.
+
 `check_password` is casting the 20-byte-long password from a `const char*` to an `int*`.
+
 The `for` loop then adds five divisions of the 20-byte-long password and outputs their sum.
+
 If we recall, **col** is a 32-bit executable, so integers will take up 4 bytes, which matches the 5 divisions that the `for` loop sums.
+
 **Now, all we have to do is prepare our payload:**
+
 First, let's convert the hex hashcode `0x21DD09EC` to decimal and divide it into 5 parts with:
 ```python
 col@pwnable:~$ python3
