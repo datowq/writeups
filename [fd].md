@@ -77,7 +77,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 The first four parts are equal divisions of `113626824` with the fifth part as the remainder `113626828`. 
 
-To turn these decimal values into a 20-byte-long password, we can pack them into little-endian byte code using the `struct` python library.
+To turn these decimal values into a 20-byte-long password, we can pack them into little-endian byte code using the `struct` python module.
 ```python
 >>> import struct as s
 >>> s.pack('<i', 113626824)
